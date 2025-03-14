@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Alert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            user-select: none;
+            pointer-events: none; /* Freezes screen for 15 sec */
+        }
+        #message {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">Your phone has been hacked!</div>
+
+    <script>
+        setTimeout(() => {
+            document.body.style.pointerEvents = "auto"; // Unlocks screen after 15 sec
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.getElementById("message").innerText = "April Fool! 😂";
+        }, 15000);
+    </script>
+</body>
+</html>
